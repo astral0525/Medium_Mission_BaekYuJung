@@ -42,7 +42,6 @@ public class MemberController {
         if (member ==null){
             return rq.historyBack( "이미 존재하는 회원입니다.");
         }
-        long id = member.getId();
 
         return rq.redirect(
                 "/",

@@ -1,6 +1,7 @@
 <script th:inline="javascript">
     const failMsg =  [[${failMsg}]] ;
-    if (failMsg) alert(failMsg);
+    sessionStorage.setItem("historyBackFailMsg", failMsg);
+   // if (failMsg) alert(failMsg);
     history.back();
 
 </script>

@@ -25,6 +25,17 @@
 
 <script>
 
+    //history.back 에 의해서 돌아온 경우 자바스크립트가 실행이 안 될수도 있다.
+    //$(window).bind("pageshow", function(event){});
+    $(window).bind("pageshow", function (event) {
+        if (sessionStorage.getItem("historyBackFailMsg")) {
+            toastWarning(sessionStorage.getItem("historyBackFailMsg"));
+            sessionStorage.removeItem("historyBackFailMsg");
+        }
+    });
+
+
+
     if (urlParams.msg) {
         toastNotice(urlParams.msg);
     }
